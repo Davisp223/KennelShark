@@ -5,15 +5,15 @@
       <div class="article-metadata">
         <a class="mr-2" href="#">{{ object.author }}</a>
         <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-        {% if object.author == user %}
+        
           <div>
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'entry-update' object.id %}">Update</a>
             <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'entry-delete' object.id %}">Delete</a>
           </div>
-        {% endif %}
+     
       </div>
-      <h2 class="article-title">{{ object.title }}</h2>
-      <p class="article-content">{{ object.content }}</p>
+      <h2 class="article-title">{{ object.Name_of_animal }}</h2>
+      <p class="article-content">{{ object.Last_Name }}</p>
     </div>
   </article>
 {% endblock content %}

@@ -25,34 +25,31 @@ class EntryDetailView(LoginRequiredMixin, DetailView):
 
 class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
-    fields = ['title', 'content']
+    fields = [
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food',
+        'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
+    ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
-class EntryUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EntryUpdateView(LoginRequiredMixin,  UpdateView):
     model = Entry
-    fields = ['title', 'content']
+    fields = [
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food',
+        'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
+    ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    def test_func(self):
-        Entry = self.get_object()
-        if self.request.user == Entry.author:
-            return True
-        return False
 
 
-class EntryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+class EntryDeleteView(LoginRequiredMixin,  DeleteView):
     model = Entry
     success_url = '/ui/'
 
-    def test_func(self):
-        Entry = self.get_object()
-        if self.request.user == Entry.author:
-            return True
-        return False
