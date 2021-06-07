@@ -106,7 +106,7 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           {% if user.is_authenticated %}
-          <a class="navbar-brand mr-4" href="#">Kennel Shark - SMK</a>
+          <a class="navbar-brand mr-4" href="{% url 'index' %}">Kennel Shark - SMK</a>
           {% else %}
           <a class="navbar-brand mr-4" href="/">Kennel Shark</a>
           {% endif %}
@@ -116,8 +116,8 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               {% if user.is_authenticated %}
-              <a class="nav-item nav-link" href="#">Home</a>
-              <a class="nav-item nav-link" href="#">New entry</a>
+              <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'entry-create' %}">New entry</a>
               <a class="nav-item nav-link" href="#"></a>
               <a class="nav-item nav-link" href="#"></a>
               {% else %}
@@ -128,10 +128,13 @@
             <div class="navbar-nav">
               {% if user.is_authenticated %}
               <!--<a class="nav-item nav-link" href="#">Not finished</a>-->
-              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>             
+              {% else %}
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+              {%endif%}
+              {% if user.is_authenticated and user.is_superuser %}
               <a class="nav-item nav-link" href="/admin">Admin</a>
               {% else %}
-              <a class="nav-item nav-link" href="#"></a>
               <a class="nav-item nav-link" href="#"></a>
               {% endif %}
             </div>
@@ -140,8 +143,8 @@
       </nav>
     </header>
     <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
+     <!-- <div class="row"> -->
+      <!--  <div class="col-md-8"> -->
           {% if messages %}
             {% for message in messages %}
               <div class="alert alert-{{ message.tags }}">
@@ -150,10 +153,8 @@
             {% endfor %}
           {% endif %}
           {% block content %}{% endblock %}
-        </div>
-
-        
-      </div>
+      <!--  </div>
+      </div> -->
     </main>
 
     <!-- Optional JavaScript -->
