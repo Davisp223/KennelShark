@@ -11,16 +11,27 @@ from django.contrib.auth.decorators import login_required
 from .models import Entry
 
 
+
+#search
+
+
+
+
 #entries
 class EntryListView(LoginRequiredMixin, ListView):
     model = Entry
     template_name = 'ui/index.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'entries'
     ordering = ['-date_posted']
+    
 
 
 class EntryDetailView(LoginRequiredMixin, DetailView):
     model = Entry
+
+class PrintView(LoginRequiredMixin, ListView):
+    model = Entry
+    template_name = 'ui/entry_print.html'
 
 
 class EntryCreateView(LoginRequiredMixin, CreateView):
@@ -52,4 +63,7 @@ class EntryUpdateView(LoginRequiredMixin,  UpdateView):
 class EntryDeleteView(LoginRequiredMixin,  DeleteView):
     model = Entry
     success_url = '/ui/'
+
+
+
 

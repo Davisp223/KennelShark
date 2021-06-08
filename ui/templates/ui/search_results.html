@@ -1,0 +1,16 @@
+{% extends "index/base.html" %}
+{% block content %}
+    <center>
+        {% if searched %}
+        <h1>You Searched For {{ searched }}</h1>
+        <br/>
+        {% for dog_name in dog_names %}
+
+            <a href="{% url 'entry-detail' entry.id %}">{{ dog_name }}</a> <br/>
+
+        {% endfor %}
+        {% else %}
+        <h1> Hey! You Forgot To Search For A Dog Name ...</h1>
+        {% endif %}
+</center>
+{% endblock content %}

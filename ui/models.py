@@ -2,6 +2,10 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+import qrcode
+from io import BytesIO
+from django.core.files import File
+from PIL import Image, ImageDraw
 
 
 
@@ -37,10 +41,9 @@ class Entry(models.Model):
     Dosage= models.CharField(max_length=40, null=True, blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    #qr codes
+    qrcode=models.ImageField(upload_to='qr_codes', blank=True)
 
-
-    def __str__(self):
-        return self.title
 
     def get_absolute_url(self):
         return reverse('entry-detail', kwargs={'pk': self.pk})

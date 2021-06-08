@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'ui.apps.UiConfig',
     'crispy_forms',
+    'xhtml2pdf',
+    'django_filters',
     'index.apps.IndexConfig',
     'django.contrib.admin',
     'django.contrib.auth',
