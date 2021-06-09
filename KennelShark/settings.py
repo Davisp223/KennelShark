@@ -93,7 +93,7 @@ if DB_URL:
     DEBUG = False
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql', 
+            'ENGINE': 'django.db.backends.mysql' 
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
@@ -106,9 +106,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', 
-            'NAME': 'troop996',
+            'NAME': 'mysql',
             'USER': 'root',
-            'PASSWORD': 'password',
+            'PASSWORD': 'Password',
             'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
