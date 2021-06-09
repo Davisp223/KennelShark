@@ -98,7 +98,7 @@ if DB_URL:
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
-            'HOST': DB_HOST,   # Or an IP Address that your DB is hosted on
+            'HOST': 'ec2-107-20-153-39.compute-1.amazonaws.com',
             'PORT': DB_PORT,
         }
     }
