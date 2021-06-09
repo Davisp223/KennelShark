@@ -11,7 +11,7 @@
               <small class="text-muted">{{ entry.date_in |date:"F d, Y"}}  To  {{ entry.date_out|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'entry-detail' entry.id %}">{{ entry.Name_of_animal }} , {{ entry.Last_Name }}</a></h2>
-            <p class="article-content">{{  entry.DCV_DLX }}</p>
+            <span class="article-content">In Kennel: {{  entry.Kennel }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Food in: {{ entry.Food_Location }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Medication: {{  entry.Meds }}</span>&nbsp;&nbsp;&nbsp;<span>Rot: {{  entry.Rot }}</span>&nbsp;&nbsp;&nbsp;<span>Starts: {{  entry.Starts }}</span>&nbsp;&nbsp;&nbsp;<span>Ends: {{  entry.Ends }}</span>&nbsp;&nbsp;&nbsp;<span>Mrn: {{  entry.Mrn }}</span>&nbsp;&nbsp;&nbsp;<span>Eve: {{  entry.Eve }}</span>&nbsp;&nbsp;&nbsp;<span>Dosage: {{  entry.Dosage }}</span>
           </div>
          </article>
     </div>

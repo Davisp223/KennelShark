@@ -45,6 +45,7 @@ class Entry(models.Model):
     date_groom = models.DateField(blank=True, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
     Kennel = models.CharField(max_length=40, null=True, blank=True)
+    Food_Location = models.CharField(max_length=40, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
 

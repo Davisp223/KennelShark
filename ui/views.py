@@ -42,7 +42,7 @@ class EntryDetailView(LoginRequiredMixin, DetailView):
 class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
     fields = [
-        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Food_Location''Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
     ]
 
@@ -54,7 +54,7 @@ class EntryCreateView(LoginRequiredMixin, CreateView):
 class EntryUpdateView(LoginRequiredMixin,  UpdateView):
     model = Entry
     fields = [
-        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Food_Location','Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
     ]
 
@@ -66,7 +66,7 @@ class EntryUpdateView(LoginRequiredMixin,  UpdateView):
 class EntryBoardView(LoginRequiredMixin,  UpdateView):
     model = Entry
     fields = [
-    'date_in','date_out','date_groom','Sex','Age','Groomer','Weight','DCV_DLX','GCD','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
+    'date_in','date_out','date_groom','Sex','Age','Groomer','Weight','DCV_DLX','GCD','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Food_Location','Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
     ]
 
@@ -77,7 +77,7 @@ class EntryBoardView(LoginRequiredMixin,  UpdateView):
 class EntryKennelView(LoginRequiredMixin,  UpdateView):
     model = Entry
     fields = [
-    'Kennel'
+    'Kennel','Food_Location'
     ]
 
     def form_valid(self, form):
