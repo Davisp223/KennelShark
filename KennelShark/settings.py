@@ -91,7 +91,7 @@ DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
 DB_URL = os.getenv("HEROKU_POSTGRESQL_TEAL_URL")
 if DB_URL:
-    DEBUG = False
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql', 
