@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'KennelShark.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-DB_USER = os.getenv("DB_UName")
+DB_USER = os.getenv("DB_Uname")
 DB_PASSWORD = os.getenv("DB_Pass")
 DB_HOST = os.getenv("DB_Host")
 DB_NAME = os.getenv("DB_Name")
