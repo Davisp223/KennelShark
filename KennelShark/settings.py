@@ -88,7 +88,7 @@ DB_PASSWORD = os.getenv("DB_Pass")
 DB_HOST = os.getenv("DB_Host")
 DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
-DB_URL = os.getenv("JAWSDB_URL")
+DB_URL = os.getenv("JAWSDB_AQUA_URL")
 if DB_URL:
     DEBUG = False
     DATABASES = {
