@@ -7,20 +7,23 @@ from .views import (
     EntryCreateView,
     EntryUpdateView,
     EntryDeleteView,
-    PrintView,
+    EntryBoardView,
+    EntryKennelView,
+
 
 
     
 )
 urlpatterns = [
     path('', EntryListView.as_view(), name='index'),
-    
+
 
     #entry
     path('entry/<int:pk>/', EntryDetailView.as_view(), name='entry-detail'),
-    path('entry/<int:pk>/', PrintView.as_view(), name='entry-print'),
     path('entry/new/', EntryCreateView.as_view(), name='entry-create'),
     path('entry/<int:pk>/update/', EntryUpdateView.as_view(), name='entry-update'),
+    path('entry/<int:pk>/board/', EntryBoardView.as_view(), name='entry-board'),
+    path('entry/<int:pk>/kennel/', EntryKennelView.as_view(), name='entry-kennel'),
     path('entry/<int:pk>/delete/', EntryDeleteView.as_view(), name='entry-delete'),
 
 ]

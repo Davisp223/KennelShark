@@ -12,32 +12,37 @@ from .models import Entry
 
 
 
-#search
-
-
-
-
-#entries
 class EntryListView(LoginRequiredMixin, ListView):
     model = Entry
     template_name = 'ui/index.html'  # <app>/<model>_<viewtype>.html
-    context_object_name = 'entries'
-    ordering = ['-date_posted']
+    context_object_name = "entries"
+    ordering = ['-date_out']
+
+
+    
+  
+
     
 
 
 class EntryDetailView(LoginRequiredMixin, DetailView):
     model = Entry
+    fields = [
+        'kennel'
+    ]
 
-class PrintView(LoginRequiredMixin, ListView):
-    model = Entry
-    template_name = 'ui/entry_print.html'
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+
 
 
 class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
     fields = [
-        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food',
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
     ]
 
@@ -49,8 +54,30 @@ class EntryCreateView(LoginRequiredMixin, CreateView):
 class EntryUpdateView(LoginRequiredMixin,  UpdateView):
     model = Entry
     fields = [
-        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food',
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
+    ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class EntryBoardView(LoginRequiredMixin,  UpdateView):
+    model = Entry
+    fields = [
+    'date_in','date_out','date_groom','Sex','Age','Groomer','Weight','DCV_DLX','GCD','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Feeding','Feeding2',
+        'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
+    ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class EntryKennelView(LoginRequiredMixin,  UpdateView):
+    model = Entry
+    fields = [
+    'Kennel'
     ]
 
     def form_valid(self, form):

@@ -1,17 +1,21 @@
 {% extends "index/base.html" %}
 {% block content %}
+
+
     {% for entry in entries %}
+    <div class="col-sm">
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ entry.author }}</a>
-              <small class="text-muted">{{ entry.date_posted }}</small>
+              <small class="text-muted">{{ entry.date_in |date:"F d, Y"}}  To  {{ entry.date_out|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="{% url 'entry-detail' entry.id %}">{{ entry.Name_of_animal }}</a></h2>
+            <h2><a class="article-title" href="{% url 'entry-detail' entry.id %}">{{ entry.Name_of_animal }} , {{ entry.Last_Name }}</a></h2>
             <p class="article-content">{{  entry.DCV_DLX }}</p>
           </div>
-          
-        </article>
+         </article>
+    </div>
+
     {% endfor %}
 
 
