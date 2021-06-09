@@ -104,7 +104,7 @@ if DB_URL:
     }
 else:
     DEBUG = True
-DATABASES = {
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', 
             'NAME': 'mysql',
