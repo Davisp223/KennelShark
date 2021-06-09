@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'kennelshark.herokuapp.com',
-    'kennelshark.com,'
+    'kennelshark.com',
+    'localhost'
 
 ]
 
