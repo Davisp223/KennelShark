@@ -84,17 +84,17 @@ WSGI_APPLICATION = 'KennelShark.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-DB_USER = os.getenv("DB_Uname")
+DB_USER = os.getenv("DB_UName")
 DB_PASSWORD = os.getenv("DB_Pass")
 DB_HOST = os.getenv("DB_Host")
 DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
-DB_URL = os.getenv("JAWSDB_AQUA_URL")
+DB_URL = os.getenv("HEROKU_POSTGRESQL_TEAL_URL")
 if DB_URL:
     DEBUG = False
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopyg2', 
+            'ENGINE': django.db.backends.postgresql_psycopyg2, 
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
@@ -104,7 +104,7 @@ if DB_URL:
     }
 else:
     DEBUG = True
-    DATABASES = {
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', 
             'NAME': 'mysql',
