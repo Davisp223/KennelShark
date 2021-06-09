@@ -97,7 +97,7 @@ if DB_URL:
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
-            'HOST': 'dfkpczjgmpvkugnb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'	,   # Or an IP Address that your DB is hosted on
+            'HOST': 'qao3ibsa7hhgecbv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	'	,   # Or an IP Address that your DB is hosted on
             'PORT': DB_PORT,
         }
     }
