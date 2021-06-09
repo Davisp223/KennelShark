@@ -83,24 +83,11 @@ WSGI_APPLICATION = 'KennelShark.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DB_USER = os.getenv("DB_Uname")
-DB_PASSWORD = os.getenv("DB_Pass")
-DB_HOST = os.getenv("DB_Host")
-DB_NAME = os.getenv("DB_Name")
-DB_PORT = os.getenv("DB_Port")
 DB_URL = os.getenv("JAWSDB_URL")
 if DB_URL:
     DEBUG = False
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql', 
-            'NAME': DB_NAME,
-            'USER': DB_USER,
-            'PASSWORD': DB_PASSWORD,
-            'HOST': DB_HOST,   # Or an IP Address that your DB is hosted on
-            'PORT': DB_PORT,
-        }
-    }
+    import dj_database_url
+    DATABASES = {"default": dj_database_url.config(default=DB_URL)}
 else:
     DEBUG = True
     DATABASES = {
