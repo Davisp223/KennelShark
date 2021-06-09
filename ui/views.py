@@ -42,7 +42,7 @@ class EntryDetailView(LoginRequiredMixin, DetailView):
 class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
     fields = [
-        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Food_Location''Feeding','Feeding2',
+        'First_Name','Last_Name','Name_of_animal','Type_of_animal','Sex','Age','Breed','Color','Groomer','Weight','DCV_DLX','GCD','Home','Cell','Work','Vet','Emer','DHLPP','Rabies','Bordetella','Remarks','Our_or_own_food','Food_Location','Feeding','Feeding2',
         'Meds','Rot','Starts','Ends','Mrn','Eve','Dosage'
     ]
 
