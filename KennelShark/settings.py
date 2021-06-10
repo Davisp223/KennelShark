@@ -89,7 +89,7 @@ DB_PASSWORD = os.getenv("DB_Pass")
 DB_HOST = os.getenv("DB_Host")
 DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
-DB_URL = os.getenv("HEROKU_POSTGRESQL_TEAL_URL")
+DB_URL = os.getenv("DATABASE_URL")
 if DB_URL:
     DEBUG = True
     DATABASES = {
@@ -98,7 +98,7 @@ if DB_URL:
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
-            'HOST': 'ec2-107-20-153-39.compute-1.amazonaws.com',
+            'HOST': 'ec2-54-162-119-125.compute-1.amazonaws.com',
             'PORT': DB_PORT,
         }
     }
