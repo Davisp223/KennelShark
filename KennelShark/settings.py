@@ -99,7 +99,7 @@ if DB_URL:
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
-            'HOST': 'ec2-54-162-119-125.compute-1.amazonaws.com',
+            'HOST': 'ec2-3-226-134-153.compute-1.amazonaws.com',
             'PORT': DB_PORT,
         }
     }
