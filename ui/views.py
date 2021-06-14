@@ -9,16 +9,26 @@ from django.views.generic import (
 )
 from django.contrib.auth.decorators import login_required
 from .models import Entry
+from .filters import EntryFilter
 
 
 
-class EntryListView(LoginRequiredMixin, ListView):
-    model = Entry
-    template_name = 'ui/index.html'  # <app>/<model>_<viewtype>.html
-    context_object_name = "entries"
-    ordering = ['-date_out']
+#class EntryListView(LoginRequiredMixin, ListView):
+    #model = Entry
+    #template_name = 'ui/index.html'  # <app>/<model>_<viewtype>.html
+    #context_object_name = "entries"
+    #ordering = ['-date_out']
 
+@login_required
+def index(request):
+    entry = Entry.objects.all()
+    myFilter = EntryFilter(request.GET, queryset=entry)
+    entry = myFilter.qs
 
+    context = {'entry':entry, 'myFilter':myFilter,
+
+    }
+    return render(request, 'ui/index.html',context)
     
   
 

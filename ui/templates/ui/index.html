@@ -1,8 +1,14 @@
 {% extends "index/base.html" %}
 {% block content %}
-
-
-    {% for entry in entries %}
+{% load crispy_forms_tags %}
+  <div class="card card-body">
+    <form method="get">
+      {{ form|crispy }}
+      {{myFilter.form}}
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+    {% for entry in entry %}
     <div class="col-sm">
         <article class="media content-section">
           <div class="media-body">
@@ -15,8 +21,8 @@
           </div>
          </article>
     </div>
-
     {% endfor %}
+
 
 
 {% endblock content %}

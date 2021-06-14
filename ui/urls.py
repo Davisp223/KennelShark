@@ -2,7 +2,7 @@ from . import views
 from django.urls import path
 from ui import views as ui_views
 from .views import (
-    EntryListView,
+    #EntryListView,
     EntryDetailView,
     EntryCreateView,
     EntryUpdateView,
@@ -15,7 +15,8 @@ from .views import (
     
 )
 urlpatterns = [
-    path('', EntryListView.as_view(), name='index'),
+    #path('', EntryListView.as_view(), name='index'),
+    path('', views.index, name='index'),
 
 
     #entry
