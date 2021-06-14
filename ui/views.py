@@ -94,6 +94,16 @@ class EntryKennelView(LoginRequiredMixin,  UpdateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class EntrycheckinView(LoginRequiredMixin,  UpdateView):
+    model = Entry
+    fields = [
+    'Checked_in'
+    ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 
 

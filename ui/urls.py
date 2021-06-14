@@ -9,6 +9,7 @@ from .views import (
     EntryDeleteView,
     EntryBoardView,
     EntryKennelView,
+    EntrycheckinView,
 
 
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path('entry/<int:pk>/update/', EntryUpdateView.as_view(), name='entry-update'),
     path('entry/<int:pk>/board/', EntryBoardView.as_view(), name='entry-board'),
     path('entry/<int:pk>/kennel/', EntryKennelView.as_view(), name='entry-kennel'),
+    path('entry/<int:pk>/checkin/', EntrycheckinView.as_view(), name='entry-checkin'),
     path('entry/<int:pk>/delete/', EntryDeleteView.as_view(), name='entry-delete'),
 
 ]
