@@ -1,11 +1,11 @@
 {% extends "index/base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-  <div class="card card-body">
+  <div class="media content-section">
     <form method="get">
       {{ form|crispy }}
       {{myFilter.form}}
-      <button class="btn btn-primary" type="submit">Search</button>
+      <button class="btn btn-success" type="submit">Search</button>
     </form>
   </div>
     {% for entry in entry %}
@@ -13,7 +13,7 @@
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ entry.author }}</a>
+              <a class="mr-2" style="color:#FF8C00" href="#">{{ entry.author }}</a>
               <small class="text-muted">{{ entry.date_in |date:"F d, Y"}}  To  {{ entry.date_out|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'entry-detail' entry.id %}">{{ entry.Name_of_animal }} , {{ entry.Last_Name }}</a></h2>

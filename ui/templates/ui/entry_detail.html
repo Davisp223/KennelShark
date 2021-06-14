@@ -5,17 +5,17 @@
     <div class="media-body">
       <div class="noprint">
       <div class="article-metadata">
-        <a class="mr-2" href="#">{{ object.author }}</a>
+        <a class="mr-2" style="color:#FF8C00" href="#">{{ object.author }}</a>
         <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
         
           <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'entry-update' object.id %}">Update</a>
-            <a class="btn btn-success btn-sm mt-1 mb-1" href="{% url 'entry-board' object.id %}">Re Board</a>
-            <a class="btn btn-warning btn-sm mt-1 mb-1" href="{% url 'entry-checkin' object.id %}">Check In</a>
-            <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'entry-kennel' object.id %}">Kennel and Food</a>
-            <button class="btn btn-info btn-sm mt-1 mb-1" onclick="window.print()" >Print</button>
+            <a class="btn btn-outline-secondary btn-sm mt-1 mb-1" href="{% url 'entry-update' object.id %}">Update</a>
+            <a class="btn btn-outline-success btn-sm mt-1 mb-1" href="{% url 'entry-board' object.id %}">Re Board</a>
+            <a class="btn btn-outline-warning btn-sm mt-1 mb-1" href="{% url 'entry-checkin' object.id %}">Check In</a>
+            <a class="btn btn-outline-primary btn-sm mt-1 mb-1" href="{% url 'entry-kennel' object.id %}">Kennel and Food</a>
+            <button class="btn btn-outline-info btn-sm mt-1 mb-1" onclick="window.print()" >Print</button>
 
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'entry-delete' object.id %}">Delete</a>
+            <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'entry-delete' object.id %}">Delete</a>
             <h4> In Kennel - {{ object.Kennel }}   Food In - {{object.Food_Location}}</h4>
             
           </div>       
@@ -23,56 +23,51 @@
       <p class="MsoNormal"><span style="font-size:16.0pt;line-height:107%">Client:</span>
         <b><span style="font-size:22.0pt;line-height:107%">{{ object.Last_Name }}, {{ object.Name_of_animal }}</span></b><span style="font-size:20.0pt;line-height:107%"><o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">D/C: {{ object.Type_of_animal }}<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Sex: {{ object.Sex }}<span style="mso-tab-count:
-        3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Age: {{ object.Age }}<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Breed:
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">D/C: {{ object.Type_of_animal }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Sex: {{ object.Sex }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Age: {{ object.Age }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Breed:
         {{ object.Breed }}<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Arrive: {{ object.date_in }}
-        <span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>Time: 7:00 Am<span style="mso-tab-count:
-        2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Flag: <span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Color: {{ object.Color }}<o:p></o:p></span></p>
+        <span >&nbsp;&nbsp;&nbsp;&nbsp; </span>Time: 7:00 Am<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Flag: <span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Color: {{ object.Color }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Depart: {{ object.date_out }}<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>Time:<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run#<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Weight: {{ object.Weight }}<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Depart: {{ object.date_out }}<span >&nbsp;&nbsp;&nbsp;&nbsp; </span>Time:<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run#<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Weight: {{ object.Weight }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Groom: {{ object.date_groom }}<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Time: 4:00 Pm<span style="mso-tab-count:
-        2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Groomer:
-        {{ object.Groomer }}<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:
-        1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>GCD: {{ object.GCD }}<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Groom: {{ object.date_groom }}<span >&nbsp;&nbsp;&nbsp; </span>Time: 4:00 Pm<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Groomer:
+        {{ object.Groomer }}<span >&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>GCD: {{ object.GCD }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Profile: <o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Notes:<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Owner:
-          {{ object.First_Name }}<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:
-        2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Vet: {{ object.Vet }}<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Last
+          {{ object.First_Name }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Vet: {{ object.Vet }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Last
         Appt:<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Home:
-          {{ object.Home}}<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Work:{{ object.Work }}<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Emer:{{ object.Emer }}<o:p></o:p></span></p>
+          {{ object.Home}}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Work:{{ object.Work }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Emer:{{ object.Emer }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cell:{{ object.Cell }}<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Contact:<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cell:{{ object.Cell }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Contact:<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Cmnts:<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DHLPP:{{ object.DHLPP }}<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rabies:{{ object.Rabies }}<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Bordetella:{{ object.Bordetella }}<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DHLPP:{{ object.DHLPP }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rabies:{{ object.Rabies }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Bordetella:{{ object.Bordetella }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Fe leukemia:<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Fe leukemia:<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Remarks: {{ object.Remarks }}<o:p></o:p></span></p>
         
         <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Request:<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Feeding:<span style="mso-tab-count:5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Mrn <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Aft.<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Eve.<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Qnty.<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Feeding:<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Mrn <span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Aft.<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Eve.<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Qnty.<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{ object.Feeding }}<o:p></o:p></span></p>
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{ object.Feeding2 }}<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{ object.Feeding }}<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{ object.Feeding2 }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Medication: {{ object.Meds }}<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rot: {{ object.Rot }}<span style="mso-tab-count:1">&nbsp;&nbsp; </span>Starts: {{ object.Starts }}<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>Ends: {{ object.Ends }}<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>Mrn: {{ object.Mrn }}<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>Aft: <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>Eve: {{ object.Eve}}<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>Dosage: {{ object.Dosage }}<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%">Medication: {{ object.Meds }}<span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rot: {{ object.Rot }}<span >&nbsp;&nbsp; </span>Starts: {{ object.Starts }}<span >&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>Ends: {{ object.Ends }}<span >&nbsp;&nbsp;&nbsp;&nbsp; </span>Mrn: {{ object.Mrn }}<span >&nbsp;&nbsp;&nbsp;&nbsp; </span>Aft: <span >&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>Eve: {{ object.Eve}}<span >&nbsp;&nbsp;&nbsp;&nbsp; </span>Dosage: {{ object.Dosage }}<o:p></o:p></span></p>
         
-        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;
-        </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><span style="mso-tab-count:1">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><span style="mso-tab-count:1">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;</span><o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:18.0pt;line-height:107%"><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;
+        </span><span >&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp; </span><span >&nbsp;&nbsp;</span><span >&nbsp;&nbsp;</span><span >&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span >&nbsp;&nbsp;&nbsp;&nbsp; </span><span >&nbsp;&nbsp; </span><span >&nbsp;&nbsp;</span><span >&nbsp; </span><span >&nbsp;&nbsp; </span><span >&nbsp;&nbsp;</span><span >&nbsp; </span><span >&nbsp;&nbsp; </span><span >&nbsp;&nbsp;</span><o:p></o:p></span></p>
     </div>
   </article>
 {% endblock content %}
